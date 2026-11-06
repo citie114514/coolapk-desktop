@@ -783,7 +783,7 @@ export const useSettingsStore = defineStore('settings', () => {
                 build: f.build.trim() || undefined,
                 ...resolveDeviceIdentity(f),
               }
-            : automaticDeviceProfile.value ? {
+            : automaticDeviceProfile.value && automaticDeviceProfile.value.source === 'history' ? {
                 manufacturer: automaticDeviceProfile.value.manufacturer,
                 brand: automaticDeviceProfile.value.brand,
                 model: automaticDeviceProfile.value.model,
